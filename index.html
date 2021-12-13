@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>How many days since NPSS updated?</title>
+
+  <style>
+    .days {
+      font-size: 50px;
+      color: red;
+    }
+  </style>
+
+  <script type="text/javascript">
+
+
+    function countDays() {
+      var lastUpdate = new Date("2021-10-18");
+      var today = new Date();
+      var daysSince = (today - lastUpdate) / (1000 * 3600 * 24);;
+      var daysSince = Math.floor(daysSince);
+      document.getElementById("daysCounter").innerHTML = daysSince;
+      document.getElementById("lastUpdateDay").innerHTML = lastUpdate.toLocaleDateString();
+    }
+  </script>
+</head>
+
+<body onload="countDays()">
+
+  <div>
+    <h1>How many days since NPSS last updated DMBJ?</h1>
+
+    <h2>It has been <span class="days" id="daysCounter"></span> days since the last update (<span class="days" id="lastUpdateDay"></span>).</h2>
+
+  </div>
+
+
+</body>
+
+</html>
